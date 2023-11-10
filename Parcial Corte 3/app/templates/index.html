@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <meta charset="UTF-8">
+    <title>Lista de Envíos</title>
+</head>
+<body>
+    <h1>Lista de Envíos</h1>
+    <table>
+        <tr>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Identificación</th>
+            <th>Dirección de Envío</th>
+            <th>Código Postal</th>
+            <th>Productos</th>
+            <th>Acciones</th>
+        </tr>
+        {% for envio in envios %}
+        <tr>
+            <td>{{ envio[1] }}</td>
+            <td>{{ envio[2] }}</td>
+            <td>{{ envio[3] }}</td>
+            <td>{{ envio[4] }}</td>
+            <td>{{ envio[5] }}</td>
+            <td>{{ envio[6] }}</td>
+            <td>
+                <a href="{{ url_for('delete_envio', envio_id=envio[0]) }}">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <form method="POST" action="/add">
+        <input type="text" name="nombre" placeholder="Nombres" required>
+        <input type="text" name="apellido" placeholder="Apellidos" required>
+        <input type="text" name="identificacion" placeholder="Identificación" required>
+        <input type="text" name="direccion" placeholder="Dirección de Envío" required>
+        <input type="text" name="codigo_postal" placeholder="Código Postal" required>
+        <input type="text" name="productos" placeholder="Productos" required>
+        <button type="submit">Agregar</button>
+    </form>
+</body>
+</html>
