@@ -17,7 +17,7 @@ Asegúrate de tener Python y pip instalados en tu sistema. Luego, crea un entorn
 
 ```bash
 python -m venv venv
-source venv/bin/activate   # En Windows: venv\Scripts\activate
+source venv/bin/activate
 ```
 
 ### Instala las Dependencias
