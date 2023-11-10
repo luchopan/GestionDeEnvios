@@ -7,7 +7,7 @@ Este proyecto es un Sistema de Gestión de Envíos desarrollado con Flask, un fr
 ### Clona el Proyecto desde el Repositorio
 
 ```bash
-git clone url_del_repositorio
+git clone https://github.com/luchopan/GestionDeEnvios
 cd nombre_del_proyecto
 ```
 
